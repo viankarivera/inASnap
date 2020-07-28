@@ -1,7 +1,7 @@
-class Client < ActiveRecord::Base
+class Client < ApplicationRecord
     belongs_to :photographer
     has_many :photoshoots
-    has_many :locations through: :photoshoots 
+    has_many :locations, through: :photoshoots 
 
     validates :name, presence: true
     validates :phone_number, presence: true 

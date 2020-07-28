@@ -1,7 +1,6 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+inASnap is a Photographer to Client showcase that helps photographers display their clients, photoshoots, and locations.
 
 Things you may want to cover:
 

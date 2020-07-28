@@ -1,4 +1,4 @@
-class Photoshoot < ActiveRecord::Base
+class Photoshoot < ApplicationRecord
     belongs_to :client
     belongs_to :location
 

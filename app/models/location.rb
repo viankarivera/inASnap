@@ -1,6 +1,6 @@
-class Location < ActiveRecord::Base
+class Location < ApplicationRecord
     has_many :photoshoots
-    has_many :clients through: :photoshoots 
+    has_many :clients, through: :photoshoots 
 
-    validates :location, presence: true 
+    validates :name, presence: true 
 end 

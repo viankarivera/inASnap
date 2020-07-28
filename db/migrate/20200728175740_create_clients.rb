@@ -3,9 +3,8 @@ class CreateClients < ActiveRecord::Migration[6.0]
     create_table :clients do |t|
       t.string :name
       t.integer :phone_number
-      t.float :price
+      t.integer :photography_id
 
-      t.timestamp null: false
 
     end
   end
