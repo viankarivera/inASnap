@@ -16,16 +16,11 @@ ActiveRecord::Schema.define(version: 2020_07_29_201503) do
     t.string "name"
     t.integer "phone_number"
     t.integer "user_id"
-    t.float "price"
-  end
-
-  create_table "locations", force: :cascade do |t|
-    t.string "name"
   end
 
   create_table "photoshoots", force: :cascade do |t|
     t.integer "client_id"
-    t.integer "location_id"
+    t.integer "location"
     t.float "price"
   end
 
