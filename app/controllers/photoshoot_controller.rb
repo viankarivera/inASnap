@@ -1,3 +1,0 @@
-class PhotoshootController < ApplicationController
-
-end 

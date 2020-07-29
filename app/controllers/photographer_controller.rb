@@ -1,3 +1,0 @@
-class PhotographerController < ApplicationController 
-
-end 

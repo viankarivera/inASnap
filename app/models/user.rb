@@ -1,4 +1,4 @@
-class Photographer < ApplicationRecord
+class User < ApplicationRecord
     has_many :clients
     has_many :photoshoots, through: :clients
     has_many :locations, through: :photoshoots 

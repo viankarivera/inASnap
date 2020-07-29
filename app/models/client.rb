@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-    belongs_to :photographer
+    belongs_to :user
     has_many :photoshoots
     has_many :locations, through: :photoshoots 
 
