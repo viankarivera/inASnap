@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_29_201503) do
+ActiveRecord::Schema.define(version: 2020_07_29_212234) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -18,9 +18,15 @@ ActiveRecord::Schema.define(version: 2020_07_29_201503) do
     t.integer "user_id"
   end
 
+  create_table "locations", force: :cascade do |t|
+    t.string "name"
+    t.float "price"
+    t.integer "client_id"
+  end
+
   create_table "photoshoots", force: :cascade do |t|
     t.integer "client_id"
-    t.integer "location"
+    t.integer "location_id"
     t.float "price"
   end
 
