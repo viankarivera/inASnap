@@ -1,0 +1,14 @@
+<h4>Sign Up</h4>
+
+<%= form_with model: @user, url: "signup", local: true do |form| %>
+    <%= form.label "Email" %><br>
+    <%= form.text_field :email %><br>
+    <br><%= form.label "Username" %><br>
+    <%= form.text_field :username %><br>
+    <br><%= form.label "Password" %><br>
+    <%= form.text_field :password %><br>
+    <br><%= form.submit "submit" %><br>
+<% end %>
+
+<h4>Already a Member?</h4>
+<a href="/login">Log In</a>

@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
-    skip_befoer_action :require_login, only: [:new, :create]
+    skip_before_action :require_login, only: [:index, :new, :create]
 
 
     #get '/index' do 
-        erb :index 
+        #erb :index 
     #end 
 
     def index
