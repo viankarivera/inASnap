@@ -1,5 +1,10 @@
 class UsersController < ApplicationController
-    before_action :require_logged_in
+    skip_befoer_action :require_login, only: [:new, :create]
+
+
+    #get '/index' do 
+        erb :index 
+    #end 
 
     def index
         @users = User.all  

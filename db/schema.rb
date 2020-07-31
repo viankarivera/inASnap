@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_07_29_212234) do
     t.string "name"
     t.integer "phone_number"
     t.integer "user_id"
+    t.integer "location_id"
   end
 
   create_table "locations", force: :cascade do |t|

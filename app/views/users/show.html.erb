@@ -1,0 +1,12 @@
+<div>
+    <h4>Hello, <%= @user.username %>.</h4><br>
+
+    <% @photoshoots.each do |photoshoot| %>
+        Client: <%= photoshoot.client %> <a href="/clients/<%= client.id %>">Client Info</a><br>
+        Location: <%= photoshoot.location %> <a href="/locations/<%= location.id %>">See Location</a><br>
+        Price: <%= photoshoot.price %><br>
+    <% end %>
+
+    <a href="/photoshoots/new"><h4>Create a New Photoshoot</h4></a>
+
+<div>
