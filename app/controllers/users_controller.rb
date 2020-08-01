@@ -3,6 +3,10 @@ class UsersController < ApplicationController
 
     #Get/signup
     def new
+        @user = User.new 
+        if session[:current_user_id]
+            redirect_to "/", :notice => "You're already Logged In."
+        end 
         #@users = User.new 
     end 
 
@@ -14,9 +18,6 @@ class UsersController < ApplicationController
       redirect_to "/login"
     end
 
-    def index
-        @users = User.all  
-    end 
 
 
 end 
