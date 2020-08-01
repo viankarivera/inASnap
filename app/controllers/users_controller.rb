@@ -1,27 +1,22 @@
 class UsersController < ApplicationController
-    skip_before_action :require_login, only: [:index, :new, :create]
+    #skip_before_action :require_login, only: [:index, :new, :create]
 
+    #Get/signup
+    def new
+        #@users = User.new 
+    end 
 
-    #get '/index' do 
-        #erb :index 
-    #end 
+    def create #post/signup
+      @user = User.new
+      @user.email = params[:email]
+      @user.save
+
+      redirect_to "/login"
+    end
 
     def index
         @users = User.all  
     end 
 
-    def new
-        @user = User.new 
-    end 
-
-    def create
-        user = User.new(user_params)
-            if user.save
-                session[:user_id] = user.id 
-                redirect_to user_path(user)
-            else 
-                render :new 
-            end 
-    end
 
 end 

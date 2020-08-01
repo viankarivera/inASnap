@@ -1,0 +1,3 @@
+class LocationsController < ApplicationRecord
+
+end 
