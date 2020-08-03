@@ -5,12 +5,11 @@
     Location: <%= locations.name %><br>
     Price: <%= photoshoots.price %><br>
 
-    <a href="/photoshoots/<%= photoshoot.id %>/edit">Edit Shoot</a><br>
+    <%= link_to "Edit Shoot", edit_photoshoot_path(@photoshoot) %>
+    <br>
+    <%= link_to "Complete Photoshoot", photoshoot_path(@photoshoot), method: 'delete' %>
+    <br>
 
-    <form action="/photoshoots/<%= photoshoot.id %>" method="POST"
-        <input type="hidden" id="hidden" name="_method" value="DELETE">
-        <button type="submit" value="delete">Complete Photoshoot</button><br>
-    </form><br>
 
 <% end %>
 

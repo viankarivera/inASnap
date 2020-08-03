@@ -1,0 +1,12 @@
+<%= form_for [user, photoshoots] do |f| %>
+    <%= f.label :client, "Client:" %>
+    <%= f.text_field :client %>
+    <br>
+    <%= f.label :location, "Location:" %>
+    <%= f.text_field :location %>
+    <br>
+    <%= f.label :price, "Price:" %>
+    <%= f.text_field :price %>
+    <br>
+    <%= f.submit "Submit" %>
+<% end %>

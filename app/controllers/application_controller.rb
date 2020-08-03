@@ -1,20 +1,10 @@
 class ApplicationController < ActionController::Base 
-    helper_method :current_user
-    #helper_method :is_logged_in?, :current_user 
+    include ApplicationRecord::SessionsHelper 
+    before_action :current_user 
+     
     def home
 
     end 
-
-    def current_user
-        if session[:current_user_id]
-            @current_user = User.find(session[:current_user_id])
-        end 
-    end 
-
-    def login(user)
-        session[:current_user_id] = @user.id 
-    end 
-
 end 
 
     #private
