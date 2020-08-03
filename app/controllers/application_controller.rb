@@ -1,28 +1,24 @@
 class ApplicationController < ActionController::Base 
-    include ApplicationRecord::SessionsHelper 
-    before_action :current_user 
-     
-    def home
+   helper_method :current_user
+   helper_method :logged_in? 
 
+   def redirect_for_logged_in
+        redirect_to user_photoshoots_path(current_user) if logged_in?
+   end 
+
+   def redirect_for_logged_out 
+        redirect_to login_path unless logged_in? 
+   end 
+
+    private 
+
+    def current_user 
+        User.find_by_id(session[:user_id]) if logged_in?
+    end 
+
+    def logged_in?
+        !!session[:user_id]
     end 
 end 
-
-    #private
-
-     #   def require_login 
-      #      unless logged_in?
-       #         flash[:error] = "Please Log In to access photoshoots."
-
-        #        redirect_to new_login_url
-         #   end 
-        #end 
-
-        #def is_logged_in?
-         #   !!session[:user_id]
-        #end 
-
-        #def current_user
-         #   @current_user ||= User.find_by_id(session[:user_id])
-        #end 
 
 
