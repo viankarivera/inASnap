@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
  
-    get 'about', to: 'static#about'
+    get 'welcome', to: 'static#welcome'
 end
