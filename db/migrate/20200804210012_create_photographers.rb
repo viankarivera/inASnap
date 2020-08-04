@@ -4,7 +4,6 @@ class CreatePhotographers < ActiveRecord::Migration[6.0]
       t.string :name
       t.string :camera
       t.string :area
-      t.string :ratings
     end
   end
 end
