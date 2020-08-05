@@ -1,0 +1,16 @@
+<h4>Sign Up</h4>
+
+<%= form_for @users do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email "Email" %>
+    <br>
+    <%= f.label :username %>
+    <%= f.text_field :username "Username" %>
+    <br>
+    <%= f.label :password %>
+    <%= f.text_field :password %>
+    <bfr>
+    <%= f.submit "Submit" %>
+<% end %>
+
+#or signup with the google omniauth thing

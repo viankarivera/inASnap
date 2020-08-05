@@ -1,4 +1,4 @@
 class Photographer < ApplicationRecord
-has_many :ratings, through: :users
-has_many :users
+has_many :ratings
+has_many :users, through: :ratings 
 end 
