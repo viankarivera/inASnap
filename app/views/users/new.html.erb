@@ -1,11 +1,11 @@
 <h4>Sign Up</h4>
 
-<%= form_for @users do |f| %>
+<%= form_for @user, url: "/signup" do |f| %>
     <%= f.label :email %>
-    <%= f.text_field :email "Email" %>
+    <%= f.text_field :email %> #placeholder 
     <br>
     <%= f.label :username %>
-    <%= f.text_field :username "Username" %>
+    <%= f.text_field :username %>
     <br>
     <%= f.label :password %>
     <%= f.text_field :password %>

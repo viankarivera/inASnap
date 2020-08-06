@@ -1,9 +1,6 @@
-<h4>Sign Up</h4>
+<h4>Login</h4>
 
-<%= form_for @users, url: {action: "create"} do |f| %>
-    <%= f.label :email %>
-    <%= f.text_field :email "Email", :autocomplete => :off %>
-    <br>
+<%= form_for :user, url: {action: "create"} do |f| %>
     <%= f.label :username %>
     <%= f.text_field :username "Username", :autocomplete => :off %>
     <br>
