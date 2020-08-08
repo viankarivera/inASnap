@@ -1,10 +1,11 @@
 <h4>Photographers</h4>
 
-<% @photographers.each do |photographer| %>
-   <%= photographer.name %>
-   <%= photographer.camera %>
+<% @photographers.each do |photographer| %><br>
+   <%= photographer.name %><br>
+   <%= photographer.camera %><br>
    <%= photographer.area %><br>
    <br><a href= "/show/<%= photographer.id %>">View Photographer</a><br>
     <% end %>
+
 
     #How would i link a page to an individuals information??

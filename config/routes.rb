@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
     get '/login', to: 'sessions#new'
 
+    get '/show/:id', to: 'photographers#show'
+
     resources :photographers
 end
