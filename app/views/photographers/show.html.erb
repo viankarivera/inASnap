@@ -2,6 +2,14 @@
     Name: <%= @photographer.name %><br>
     Camera: <%= @photographer.camera %><br>
     Area: <%= @photographer.area %><br>
+    <br>
+    <% @photographer.rating.to_i.times do %>
+        <span class="glyphicon glyphicon-star"></span>
+    <% end %>
 
-    #add rating here eventually
+    <% @photographer.blank_stars.times do %>
+        <span class="glyphicon glyphicon-star-empty"></span>
+    <% end %>
+
+    #add /reviewrating here eventually
     

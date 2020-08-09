@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_224621) do
+ActiveRecord::Schema.define(version: 2020_08_09_171249) do
 
   create_table "photographers", force: :cascade do |t|
     t.string "name"
@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 2020_08_04_224621) do
     t.string "area"
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.string "rating"
-    t.integer "users_id"
-    t.integer "photographers_id"
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.text "comment"
+    t.integer "user_id"
+    t.integer "photographer_id"
   end
 
   create_table "users", force: :cascade do |t|

@@ -12,4 +12,6 @@ Rails.application.routes.draw do
     post '/show/:id', to: 'photographers#show'
 
     resources :photographers
+    #resources :users 
+    #resources :reviews
 end
