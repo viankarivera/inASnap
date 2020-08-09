@@ -6,8 +6,10 @@ Rails.application.routes.draw do
     post '/signup', to: 'users#create'
 
     get '/login', to: 'sessions#new'
+    post '/login', to: 'sessions#create'
 
     get '/show/:id', to: 'photographers#show'
+    post '/show/:id', to: 'photographers#show'
 
     resources :photographers
 end
