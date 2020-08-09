@@ -8,8 +8,8 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
 
-    get '/show/:id', to: 'photographers#show'
-    post '/show/:id', to: 'photographers#show'
+    get '/photographers/:id', to: 'photographers#show'
+
 
     resources :photographers
     #resources :users 
