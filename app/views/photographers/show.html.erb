@@ -1,15 +1,8 @@
 <h4><%= @photographer.id %></h4><br>
-    Name: <%= photographer.name %><br>
-    Camera: <%= photographer.camera %><br>
-    Area: <%= photographer.area %><br>
-    <br>
-    <% @photographer.rating.to_i.times do %>
-        <span class="glyphicon glyphicon-star"></span>
-    <% end %>
-
-    <% @photographer.blank_stars.times do %>
-        <span class="glyphicon glyphicon-star-empty"></span>
-    <% end %>
+    Name: <%= @photographer.name %><br>
+    Camera: <%= @photographer.camera %><br>
+    Area: <%= @photographer.area %><br>
+    
 
     #add /reviewrating here eventually
     

@@ -5,7 +5,9 @@ class PhotographersController < ApplicationController
     end
     
     def show
-        @photographers = Photographer.find_by_id(params[:id])
+        @photographer = Photographer.find_by_id(params[:id])
     end 
+
+
 
 end 

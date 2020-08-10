@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get '/login', to: 'sessions#new'
     post '/login', to: 'sessions#create'
 
-    get '/photographers/:id', to: 'photographers#show'
+    get '/photographer/:id', to: 'photographers#show'
 
 
     resources :photographers
