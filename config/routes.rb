@@ -12,6 +12,6 @@ Rails.application.routes.draw do
 
 
     resources :photographers
-    #resources :users 
-    #resources :reviews
+    resources :users 
+    resources :reviews
 end
