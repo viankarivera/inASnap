@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
     get '/photographer/:id', to: 'photographers#show'
 
+    get '/review/:id', to: 'reviews#show'
+
 
     resources :photographers
     resources :users 

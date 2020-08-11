@@ -3,6 +3,8 @@
     Camera: <%= @photographer.camera %><br>
     Area: <%= @photographer.area %><br>
     
-
+<%= link_to "Post a Review!", reviews_path(@review) %>    
+<%= link_to "See Reviews", reviews_path(@review) %>    
+# GET request for photographer.id's reviews
     #add /reviewrating here eventually
     

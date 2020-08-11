@@ -1,6 +1,7 @@
 # README
+Welcome to the Yelp of photographers!
 
-inASnap is a Photographer to Client showcase that helps photographers display their clients, photoshoots, and locations.
+InASnap is essentially a user review based archive geared towards creating a convenient area on the web to find photographers for whatever type of occasion. Users can not only view but also submit a rating and/or a review of a photographer they have used. They can also add new photographers.
 
 Things you may want to cover:
 
