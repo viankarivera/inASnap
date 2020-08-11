@@ -1,7 +1,7 @@
-<%= simple_form_for(@review) do |f| %>
-    <%= f.input :rating, collection: 1..5, as: :radio_buttons %>
-    <%= f.input :comment %>
-    <%= f.button :submit %>
+<%= form_for @review do |f| %>
+    <%= f.label :comment %><br>
+    <%= f.text_field :comment %><br>
+    <%= f.button :submit %><br>
 <% end %>
 
 #use form for

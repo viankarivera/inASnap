@@ -12,10 +12,12 @@ Rails.application.routes.draw do
 
     get '/photographer/:id', to: 'photographers#show'
 
-    get '/review/:id', to: 'reviews#show'
+    get '/reviews', to: 'reviews#show'
+    get '/reviews/:id/edit', to: 'reviews#edit'
+    patch 'reviews/:id', to: 'reviews#update'
 
 
     resources :photographers
     resources :users 
-    resources :reviews
+    resources :reviews, only: [:index, :show, :new, :create, :edit, :update]
 end

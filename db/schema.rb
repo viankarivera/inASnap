@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 2020_08_09_171249) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
     t.text "comment"
     t.integer "user_id"
     t.integer "photographer_id"
