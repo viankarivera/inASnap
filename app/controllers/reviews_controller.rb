@@ -5,14 +5,13 @@ class ReviewsController < ApplicationController
     end 
 
     def show 
-        "Hello World"
-       # if @review.user_id == @user.id 
-        #    render :show 
-        #else
-         #   redirect_to reviews_path 
-        #end 
-       # @review = Review.find_by_id(params[:id])
+        if @review.user_id == current_user.id 
+            render :show 
+        else 
+            redirect_to reviews_path 
+        end 
     end 
+       
 
     def new
         @review = Review.new
@@ -20,8 +19,8 @@ class ReviewsController < ApplicationController
 
     def create 
         @review = Review.new(review_params)
-        @review.user_id = @user.id
-        @review.photographer_id = @photographer.id 
+        @review.user_id = current_user.id 
+        #@review.photographer_id = @photographer.id 
         if @review.save
             redirect_to reviews_path 
         else 
@@ -30,7 +29,7 @@ class ReviewsController < ApplicationController
     end 
 
     def edit
-        @review = Review.find(params[:id])
+        @review = Review.find_by_id(params[:id])
     end 
 
     def update 
@@ -43,7 +42,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params 
-        params.require(:review).permit(:rating, :comment)
+        params.require(:review).permit(:comment)
     end 
 
 end 

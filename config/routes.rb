@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
  
+  devise_for :users
     get 'welcome', to: 'static#welcome'
 
     get '/signup', to: 'users#new'
@@ -12,7 +13,10 @@ Rails.application.routes.draw do
 
     get '/photographer/:id', to: 'photographers#show'
 
-    get '/reviews', to: 'reviews#show'
+    get '/reviews', to: 'reviews#index'
+    get '/reviews/new', to: 'reviews#new'
+    post '/reviews/new', to: 'reviews#create'
+
     get '/reviews/:id/edit', to: 'reviews#edit'
     patch 'reviews/:id', to: 'reviews#update'
 

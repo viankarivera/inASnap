@@ -1,5 +1,7 @@
-<h4><%= @user.username %>'s Reviews</h4> #want this to be current users reviews
+<h4><%= @user.username %>'s Reviews:</h4> #want this to be current users reviews
 
+<br><%= link_to "Post a Review", new_review_path %><br> 
+    <%= link_to "Edit a Review", edit_review_path %>
 <% @user.reviews.each do |r| %>
 
 <% end %>
