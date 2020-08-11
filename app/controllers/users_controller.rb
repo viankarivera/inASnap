@@ -4,6 +4,10 @@ class UsersController < ApplicationController
         @user = User.new #get signup
     end 
 
+    def show 
+        @user = User.find_by_id(params[:id])
+    end 
+
     def create #post signup
         @user = User.new(user_params)
         if @user.save
