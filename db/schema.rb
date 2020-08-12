@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_171249) do
     t.string "name"
     t.string "camera"
     t.string "area"
+    t.text "review"
   end
 
   create_table "reviews", force: :cascade do |t|

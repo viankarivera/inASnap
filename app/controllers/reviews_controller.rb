@@ -14,13 +14,16 @@ class ReviewsController < ApplicationController
        
 
     def new
-        @review = Review.new
+       # byebug
+        @review = Review.new(photographer_id: params[:photographer_id])
+        
+        #@photographer.id = Photographer.find_by_id(params[:id])
     end 
 
     def create 
         @review = Review.new(review_params)
         @review.user_id = current_user.id 
-        #@review.photographer_id = @photographer.id 
+        #@review.photographer_id = @photographer.id
         if @review.save
             redirect_to reviews_path 
         else 
@@ -29,7 +32,11 @@ class ReviewsController < ApplicationController
     end 
 
     def edit
-        @review = Review.find_by_id(params[:id])
+        if @review.user_id == current_user.id 
+            render :edit 
+        else 
+            redirect_to reviews_path(@review)
+        end 
     end 
 
     def update 

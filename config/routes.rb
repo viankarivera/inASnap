@@ -15,13 +15,17 @@ Rails.application.routes.draw do
 
     get '/reviews', to: 'reviews#index'
     get '/reviews/new', to: 'reviews#new'
-    post '/reviews/new', to: 'reviews#create'
+    post '/reviews/new', to: 'reviews#show'
 
     get '/reviews/:id/edit', to: 'reviews#edit'
     patch 'reviews/:id', to: 'reviews#update'
 
 
     resources :photographers
-    resources :users 
+    resources :users
+    
+    resources :photographers do 
+        resources :reviews, only: [:index, :new, :create]
+    end 
     resources :reviews, only: [:index, :show, :new, :create, :edit, :update]
 end
