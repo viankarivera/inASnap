@@ -21,7 +21,7 @@ class ReviewsController < ApplicationController
     end 
 
     def create 
-        @review = Review.new(review_params)
+        @review = Review.create(review_params)
         @review.user_id = current_user.id 
         #@review.photographer_id = @photographer.id
         if @review.save

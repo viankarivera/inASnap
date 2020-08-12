@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
     get '/reviews', to: 'reviews#index'
     get '/reviews/new', to: 'reviews#new'
-    post '/reviews/new', to: 'reviews#show'
+    post '/reviews', to: 'reviews#create'
 
     get '/reviews/:id/edit', to: 'reviews#edit'
     patch 'reviews/:id', to: 'reviews#update'
@@ -23,6 +23,10 @@ Rails.application.routes.draw do
 
     resources :photographers
     resources :users
+
+    resources :users do 
+      resources :reviews, only: [:index, :create, :edit, :update]
+    end 
     
     resources :photographers do 
         resources :reviews, only: [:index, :new, :create]

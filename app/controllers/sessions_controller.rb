@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
 
+
     def new
+        @user = User.new 
         #login view
     end 
 
