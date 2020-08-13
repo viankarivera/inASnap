@@ -2,9 +2,10 @@
     Name: <%= @photographer.name %><br>
     Camera: <%= @photographer.camera %><br>
     Area: <%= @photographer.area %><br>
+
+    <%= @photographer.reviews.all %>
     
-<br><%= link_to "Post a Review!", new_review_path %><br>    
-<%= link_to "See Reviews", reviews_path %>    
+<br><%= link_to "Post a Review!", new_review_path %><br>   
 # GET request for photographer.id's reviews
     #add /reviewrating here eventually
     

@@ -2,5 +2,5 @@
 
  <p><%= link_to "See all Reviews", reviews_path(@reviews) %></p><br>
 
-<br><%= link_to "Post a Review", new_reviews_path(@review) %><br> 
-    <%= link_to "Edit a Review", edit_review_path(@review) %>
+<br><%= link_to "Post a Review", new_review_path(@review) %><br> 
+    <%= link_to "Edit a Review", edit_review_path(@review, [:id]) %>

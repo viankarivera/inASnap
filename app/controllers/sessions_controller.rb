@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
             redirect_to login_path
         else
             session[:user_id] = @user.id
-            redirect_to users_path(@user)
+            redirect_to photographers_path(@user)
            # byebug
         
         end 
