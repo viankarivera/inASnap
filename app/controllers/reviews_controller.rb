@@ -8,14 +8,14 @@ class ReviewsController < ApplicationController
 
 
     def new
-         @review = Review.new(current_user: params[:current_user_id])
-         @review = @photographer.reviews.build 
+        @review = Review.new(user_id: current_user.id)
+        @review = @photographer.review.build 
      end 
 
      def create 
         @review = current_user.reviews.build(review_params)
-        #@review.user_id = current_user.id 
-        #@review.photographer_id = @photographer.id
+        @review.user_id = current_user.id 
+        @review.photographer_id = @photographer.id
         if @review.save
             redirect_to reviews_path 
         else 
