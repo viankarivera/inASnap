@@ -2,20 +2,24 @@ class ReviewsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
     def index
-        @reviews = Review.all 
+        @reviews = Review.all
     
     end 
 
 
     def new
-        @review = Review.new(user_id: current_user.id)
-        @review = @photographer.review.build 
+        if params[:photographer_id]
+        @review = Review.new(photographer_id: params[:photographer_id])
+        else 
+            @review = Review.new 
+        end 
+
      end 
 
      def create 
         @review = current_user.reviews.build(review_params)
-        @review.user_id = current_user.id 
-        @review.photographer_id = @photographer.id
+       # @review.user_id = current_user.id 
+        #@review.photographer_id = @photographer.id
         if @review.save
             redirect_to reviews_path 
         else 
@@ -52,7 +56,7 @@ class ReviewsController < ApplicationController
     private
 
     def review_params 
-        params.require(:review).permit(:comment)
+        params.require(:review).permit(:comment, :photographer_id)
     end 
 
 end 

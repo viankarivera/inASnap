@@ -1,4 +1,6 @@
-<%= form_for @review do |f| %>
+<%= form_for [@review.photographer, @review] do |f| %>
+    <%= f.label :photographer_id %>
+    <%= f.collection_select :photographer_id, Photographer.all, :id, :name %>
     <%= f.label :comment %><br>
     <%= f.text_field :comment %><br>
     <%= f.button :submit %><br>

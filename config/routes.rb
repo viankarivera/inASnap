@@ -2,16 +2,11 @@ Rails.application.routes.draw do
 
 
   resources :sessions
-  resources :users do 
-    resources :reviews 
-  end 
-  resources :users do 
-    resources :photographers 
-  end 
+  resources :users
   resources :photographers do
-    resources :reviews, :only => [:create, :show]
+    resources :reviews, :only => [:create, :new, :index]
   end 
-  resources :reviews 
+  resources :reviews, :only => [:show, :index, :update, :edit, :delete] 
   resources :photographers, :except => [:create, :edit, :delete]
  
   #devise_for :users
