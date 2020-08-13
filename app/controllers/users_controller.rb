@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
+   # before_action :redirect_logged_in
+
+    def index
+        @users = User.all 
+    end 
 
     def new
         @user = User.new #get signup
-    end 
-
-    def show 
-        @user = User.find_by_id(params[:id])
-        @reviews = @user.reviews 
     end 
 
     def create #post signup
@@ -20,6 +20,13 @@ class UsersController < ApplicationController
 
        # byebug
     end 
+
+    def show 
+        redirect_if_not_logged_in
+        @user = User.find_by_id(params[:id])
+        redirect_to welcome_path if !@user 
+    end 
+
 
     private
 

@@ -2,15 +2,15 @@
 
 <%= form_for @user, url: "/signup" do |f| %>
     <%= f.label :email %>
-    <%= f.text_field :email %> #placeholder 
+    <%= f.email_field :email %> 
     <br>
     <%= f.label :username %>
     <%= f.text_field :username %>
     <br>
     <%= f.label :password %>
-    <%= f.text_field :password %>
+    <%= f.password_field :password %>
     <br>
-    <%= f.submit "Submit" %>
+    <%= f.submit "Sign Up" %>
 <% end %>
 
 #or signup with the google omniauth thing

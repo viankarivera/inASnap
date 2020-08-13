@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-
+    before_action :redirect_if_not_logged_in
+    
     def index
         @reviews = Review.all 
     end 
@@ -15,7 +16,7 @@ class ReviewsController < ApplicationController
 
     def new
        # byebug
-        @review = Review.new(photographer_id: params[:photographer_id])
+        @review = Review.new(current_user: params[:current_user_id])
         
         #@photographer.id = Photographer.find_by_id(params[:id])
     end 
