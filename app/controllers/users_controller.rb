@@ -24,7 +24,7 @@ class UsersController < ApplicationController
     def show 
         redirect_if_not_logged_in
         @user = User.find_by_id(params[:id])
-        redirect_to welcome_path if !@user 
+        redirect_to login_path if !current_user 
     end 
 
 

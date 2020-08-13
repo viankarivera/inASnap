@@ -1,6 +1,6 @@
-<h4><%= @user.username %>'s Reviews:</h4> #want this to be current users reviews
+<h4><%= current_user %>'s Reviews:</h4> #want this to be current users reviews
 
+ <p><%= link_to "See all Reviews", reviews_path(@reviews) %></p><br>
 
-
-<br><%= link_to "Post a Review", new_review_path %><br> 
-    <%= link_to "Edit a Review", edit_review_path %>
+<br><%= link_to "Post a Review", new_reviews_path(@review) %><br> 
+    <%= link_to "Edit a Review", edit_review_path(@review) %>

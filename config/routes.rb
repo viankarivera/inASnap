@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     post '/login', to: 'sessions#create'
 
     get '/users', to: 'users#show'
-    #post '/users/:id', to: 'users#show'
+    post '/users/:id', to: 'users#show'
 
     delete '/logout', to: 'sessions#destroy'
 
@@ -25,15 +25,11 @@ Rails.application.routes.draw do
     patch 'reviews/:id', to: 'reviews#update'
 
 
-    resources :photographers
-    resources :users
-
-    resources :users do 
-      resources :reviews, only: [:index, :create, :edit, :update]
-    end 
-    
+    resources :users, only: [:index]
     resources :photographers do 
-        resources :reviews, only: [:index, :new, :create]
+      resources :reviews, only: [:new, :create, :index]
     end 
     resources :reviews, only: [:index, :show, :new, :create, :edit, :update]
+
+
 end

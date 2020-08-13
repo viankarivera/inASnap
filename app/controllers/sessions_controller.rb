@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
    # before_action :redirect_logged_in, except: [:destroy]
 
     def new
-       # @user = User.new 
+        @user = User.new 
         #login view
     end 
 
@@ -14,11 +14,11 @@ class SessionsController < ApplicationController
             redirect_to login_path
         else
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to users_path(@user)
            # byebug
         
         end 
-        #processes fform
+        #processes form
         #find user, authenticate passwrod set the session
     end 
 
