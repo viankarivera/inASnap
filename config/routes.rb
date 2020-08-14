@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users
   resources :photographers do
-    resources :reviews, :only => [:create, :new, :index]
+    resources :reviews, :only => [:create, :new, :index, :update]
   end 
   resources :reviews, :only => [:show, :index, :update, :edit, :delete] 
   resources :photographers, :except => [:create, :edit, :delete]

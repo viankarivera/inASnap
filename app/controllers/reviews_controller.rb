@@ -28,7 +28,8 @@ class ReviewsController < ApplicationController
     end 
 
 
-    def show 
+    def show
+        @review = Review.find_by_id(params[:id])
         if @review.user_id == current_user.id 
             render :show 
         else 
@@ -38,11 +39,12 @@ class ReviewsController < ApplicationController
        
 
 
-    def edit
+    def edit 
+        @review = Review.find(params[:id])
         if @review.user_id == current_user.id 
             render :edit 
         else 
-            redirect_to reviews_path(@review)
+            redirect_to reviews_path
         end 
     end 
 
@@ -50,6 +52,12 @@ class ReviewsController < ApplicationController
         @review = Review.find(params[:id])
         @review.update(review_params)
         redirect_to reviews_path(@review)
+    end
+
+    def delete 
+        @review = Review.find(params[:id])
+        @review.delete
+        redirect_to reviews_path 
     end 
 
 
