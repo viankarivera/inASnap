@@ -18,8 +18,7 @@ class SessionsController < ApplicationController
            # byebug
         
         end 
-        #processes form
-        #find user, authenticate passwrod set the session
+        
     end 
 
     def destroy
