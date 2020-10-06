@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :photographers do
     resources :reviews, :only => [:create, :new, :index, :update]
   end 
-  resources :reviews, :only => [:show, :index, :update, :edit, :delete] 
+  resources :reviews, :only => [:show, :index, :update, :edit, :destroy] 
   resources :photographers, :except => [:create, :edit, :delete]
  
   #devise_for :users
