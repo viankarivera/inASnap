@@ -2,7 +2,7 @@
 
 <%= flash[:message] if flash[:message] %>
 
-<%= form_tag ({controller: 'sessions', action: 'create', method: 'post'}) do %>
+<%= form_tag login_user_path do %>
    
     Username: <%= text_field_tag "username" %>
    <br>
@@ -10,5 +10,3 @@
    <%= submit_tag "Login" %>
 
 <% end %>
-
-#or signup with the google omniauth thing

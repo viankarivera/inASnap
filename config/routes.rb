@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
 
-  get '/auth/facebook/callback' => 'sessions#create'
 
   resources :sessions
   resources :users
@@ -17,7 +16,9 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   
   get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
+  post '/login', to: 'sessions#create', as: 'login_user'
+
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   
   get '/users', to: 'photographers#index'
   post '/users/:id', to: 'photographers#index'

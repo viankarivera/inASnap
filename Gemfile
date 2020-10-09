@@ -60,4 +60,6 @@ gem 'devise'
 
 gem 'dotenv-rails'
 
+gem 'thin'
+
 gem 'materialize-sass', '~>1.0.0'
