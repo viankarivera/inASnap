@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :reviews, :only => [:show, :index, :update, :edit, :destroy] 
   resources :photographers, :except => [:create, :edit, :delete]
  
-  #devise_for :users
+  #devise_for :users, controllers: {omniauth_callbacks: 'user/omniauth_callbacks'}
   get 'welcome', to: 'static#welcome'
   
   get '/signup', to: 'users#new'
