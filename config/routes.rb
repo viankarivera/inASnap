@@ -18,7 +18,8 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create', as: 'login_user'
 
-  get '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  get '/auth/github', as: 'github_auth'
+  match '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   #get 'auth/facebook', as: 'facebook_login'
   #get '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   
