@@ -18,8 +18,7 @@ class ReviewsController < ApplicationController
 
      def create 
         @review = current_user.reviews.build(review_params)
-       # @review.user_id = current_user.id 
-        #@review.photographer_id = @photographer.id
+
         if @review.save
             redirect_to reviews_path 
         else 

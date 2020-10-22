@@ -18,7 +18,7 @@ class UsersController < ApplicationController
             render :new 
         end 
 
-       # byebug
+       
     end 
 
     def show 

@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-   # before_action :redirect_logged_in, except: [:destroy]
     skip_before_action :verify_authenticity_token, only: :create 
 
     def new
@@ -8,7 +7,6 @@ class SessionsController < ApplicationController
     end 
 
     def create #omniauth log in
-        #byebug
         if request.env['omniauth.auth']
             @user = User.find_or_create_by_omniauth(auth)
             session[:user_id] = @user.id 
