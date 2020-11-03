@@ -1,3 +1,5 @@
+<%= flash[:message] if flash[:message] %>
+
 <%= form_for [@review.photographer, @review] do |f| %>
     <%= f.label :photographer_id %>
     <%= f.collection_select :photographer_id, Photographer.all, :id, :name %>

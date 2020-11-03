@@ -21,7 +21,8 @@ class ReviewsController < ApplicationController
 
         if @review.save
             redirect_to reviews_path 
-        else 
+        else
+            flash[:message] = "Comment can't be blank."
             render :new 
         end 
     end 
