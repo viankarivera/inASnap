@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
         if request.env['omniauth.auth']
             @user = User.find_or_create_by_omniauth(auth)
             session[:user_id] = @user.id 
-            redirect_to photographers_path(@user)
+            redirect_to photographer_path(@user)
              
         else #regular log in
             @user = User.find_by_username(params[:username])
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
                 else
 
                 session[:user_id] = @user.id
-                redirect_to photographers_path(@user)
+                redirect_to photographer_path(@user)
 
                 end
         end         

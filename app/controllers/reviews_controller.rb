@@ -1,8 +1,14 @@
 class ReviewsController < ApplicationController
     before_action :redirect_if_not_logged_in
 
-    def index
+    def index 
+        #byebug
+        if params[:photographer_id]
+            @photographer = Photographer.find(params[:photographer_id])
+            @reviews = @photographer.reviews 
+        else 
         @reviews = Review.alphabetize
+        end 
     
     end 
 
@@ -20,7 +26,7 @@ class ReviewsController < ApplicationController
         @review = current_user.reviews.build(review_params)
 
         if @review.save
-            redirect_to reviews_path 
+            redirect_to reviews_path
         else
             flash[:message] = "Comment can't be blank."
             render :new 
@@ -51,13 +57,13 @@ class ReviewsController < ApplicationController
     def update 
         @review = Review.find(params[:id])
         @review.update(review_params)
-        redirect_to reviews_path(@review)
+        redirect_to reviews_path(@reviews)
     end
 
     def destroy 
         @review = Review.find(params[:id])
         @review.destroy
-        redirect_to reviews_path 
+        redirect_to user_path(current_user) 
     end 
 
 

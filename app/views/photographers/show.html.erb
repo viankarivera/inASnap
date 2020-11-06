@@ -3,9 +3,8 @@
     Camera: <%= @photographer.camera %><br>
     Area: <%= @photographer.area %><br>
 
-    <% @photographer.reviews.each do |r| %>
-        <%= r.comment %><br>
-    <% end %>
+   <%= link_to "All Reviews", photographer_reviews_path(@photographer) %><br>
+
     
 <br><%= link_to "Post a Review!", new_photographer_review_path(@photographer.id) %><br>   
 

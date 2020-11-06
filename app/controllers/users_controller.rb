@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     def create #post signup
         @user = User.new(user_params)
         if @user.save
-            session[:user_id] = @user.id 
+            session[:user_id] = @user.id
+            flash[:message] = "Cannot be Blank."
             redirect_to photographers_path
         else
             render :new 

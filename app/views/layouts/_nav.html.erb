@@ -3,6 +3,7 @@
   <ul id="nav-mobile" class="right hide-on-med-and-down">
     <li><% if logged_in? %></li>
     <li><%= link_to "Photographers", photographers_path %></li>
+    <li><%= link_to "Reviews", photographer_reviews_path(current_user) %></li>
     <li><%= link_to "My Reviews", user_path(current_user) %></li>
     <li><%= link_to "Log Out", logout_path, method: :delete %></li>
     <li><% else %></li>
