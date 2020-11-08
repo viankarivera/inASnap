@@ -3,12 +3,11 @@ class ReviewsController < ApplicationController
 
     def index 
         #byebug
-        if params[:photographer_id]
-            @photographer = Photographer.find(params[:photographer_id])
-            @reviews = @photographer.reviews 
+       if params[:photographer_id] && @photographer = Photographer.find_by_id(params[:photographer_id])
+         @reviews = @photographer.reviews 
         else 
         @reviews = Review.alphabetize
-        end 
+      end 
     
     end 
 
@@ -26,7 +25,7 @@ class ReviewsController < ApplicationController
         @review = current_user.reviews.build(review_params)
 
         if @review.save
-            redirect_to reviews_path
+            redirect_to photographer_reviews_path(params[:photographer_id])
         else
             flash[:message] = "Comment can't be blank."
             render :new 
@@ -50,14 +49,14 @@ class ReviewsController < ApplicationController
         if @review.user_id == current_user.id 
             render :edit 
         else 
-            redirect_to reviews_path
+            redirect_to user_path(current_user)
         end 
     end 
 
     def update 
         @review = Review.find(params[:id])
         @review.update(review_params)
-        redirect_to reviews_path(@reviews)
+        redirect_to user_path(current_user)
     end
 
     def destroy 

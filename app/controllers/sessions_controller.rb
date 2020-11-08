@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: :create 
 
     def new
-       # @user = User.new 
+       @user = User.new 
         #login view
     end 
 
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
                 else
 
                 session[:user_id] = @user.id
-                redirect_to photographer_path(@user)
+                redirect_to photographers_path(@user)
 
                 end
         end         
