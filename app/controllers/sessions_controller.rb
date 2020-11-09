@@ -4,27 +4,30 @@ class SessionsController < ApplicationController
     def new
        @user = User.new 
         #login view
-    end 
+    end
 
-    def create #omniauth log in
-        if request.env['omniauth.auth']
+    def omniauth 
+       # request.env['omniauth.auth']
             @user = User.find_or_create_by_omniauth(auth)
             session[:user_id] = @user.id 
             redirect_to photographer_path(@user)
-             
-        else #regular log in
+    end 
+
+    def create #omniauth log in
+        
+             #regular log in
             @user = User.find_by_username(params[:username])
-                if @user == nil || @user.authenticate(params[:password]) == false
-                flash[:message] = "User not found."
-                redirect_to login_path
-
-                else
-
+                if @user && @user.authenticate(params[:password])
                 session[:user_id] = @user.id
                 redirect_to photographers_path(@user)
 
+                else
+
+                    flash[:message] = "User not found."
+                    redirect_to login_path
+
                 end
-        end         
+            
     end 
 
 
