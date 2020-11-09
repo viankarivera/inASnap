@@ -3,7 +3,7 @@
 <%= form_tag(photographers_path, method: :get) do %>
    <%= label_tag(:search, "Search Photographers:") %>
    <%= text_field_tag :search, params[:search] %>
-   <%= submit_tag "Search" %>
+   <%= submit_tag ("Search") %>
 <% end %><br>
 
 <% @photographers.each do |photographer| %><br>

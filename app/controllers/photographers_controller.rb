@@ -1,7 +1,7 @@
 class PhotographersController < ApplicationController
 
     def index
-        if params[:store]
+        if params[:search]
             @photographer = Photographer.search(params[:search])
         else 
          @photographers = Photographer.all 
