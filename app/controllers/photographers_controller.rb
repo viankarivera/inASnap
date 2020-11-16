@@ -12,12 +12,18 @@ class PhotographersController < ApplicationController
         @photographer = Photographer.find_by_id(params[:id])
     end
 
-    def photographer_camera
+    def canon
        # byebug
         @photographers = Photographer.canon
+       # @photographers = Photographer.sony
        # byebug
        # redirect_to photographer_path
-       render :photographer_camera 
+       render :canon 
+    end 
+
+    def sony 
+        @photographers = Photographer.sony 
+        render :sony 
     end 
 
     private 

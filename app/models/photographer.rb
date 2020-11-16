@@ -21,4 +21,8 @@ has_many :users, through: :reviews
        where("camera LIKE ?", "%Canon%")
     end 
 
+    def self.sony
+      where("camera LIKE ?", "%Sony%")
+    end 
+
 end  
