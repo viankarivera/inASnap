@@ -12,10 +12,18 @@ class PhotographersController < ApplicationController
         @photographer = Photographer.find_by_id(params[:id])
     end
 
+    def photographer_camera
+       # byebug
+        @photographers = Photographer.canon
+       # byebug
+       # redirect_to photographer_path
+       render :photographer_camera 
+    end 
+
     private 
     
     def photographer_params
-        params.require(:photographer).permit(:name, :photographer_id, :search)
+        params.require(:photographer).permit(:name, :photographer_id, :search, :camera)
     end 
 
 

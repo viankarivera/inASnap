@@ -17,4 +17,8 @@ has_many :users, through: :reviews
             #end
     end 
 
+    def self.canon
+       where("camera LIKE ?", "%Canon%")
+    end 
+
 end  

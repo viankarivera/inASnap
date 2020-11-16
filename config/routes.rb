@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   match '/auth/:provider/callback', to: 'sessions#omniauth', via: [:get, :post]
   #get 'auth/facebook', as: 'facebook_login'
   #get '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
-  
+  get '/canon-photographers', to: 'photographers#photographer_camera'
   get '/users', to: 'photographers#index'
   post '/users/:id', to: 'photographers#index'
   
