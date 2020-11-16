@@ -1,12 +1,11 @@
 class PhotographersController < ApplicationController
 
-    def index
-        if params[:search]
-            @photographer = Photographer.search(params[:search])
-        else 
-         @photographers = Photographer.all 
+    def index #if the user submits a search
+        @photographers = Photographer.all       
+        if params[:search] #then search thru the stuff we have already
+            @photographers = @photographers.search(params[:search].downcase)
         end 
-        
+        # @photographers = Photographer.name.search(params[:search])
     end
     
     def show
@@ -16,7 +15,7 @@ class PhotographersController < ApplicationController
     private 
     
     def photographer_params
-        params.require(:photgrapher).permit(:name, :photographer_id, :search)
+        params.require(:photographer).permit(:name, :photographer_id, :search)
     end 
 
 

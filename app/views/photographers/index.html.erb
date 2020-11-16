@@ -1,7 +1,7 @@
 <h3>Welcome! Here's A List of Our Photographers</h3><br>
 
 <%= form_tag(photographers_path, method: :get) do %>
-   <%= label_tag(:search, "Search Photographers:") %>
+   <%= label_tag(:search, "Search Photographers by Name:") %>
    <%= text_field_tag :search, params[:search] %>
    <%= submit_tag ("Search") %>
 <% end %><br>
