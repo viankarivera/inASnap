@@ -59,6 +59,10 @@ class ReviewsController < ApplicationController
         redirect_to user_path(current_user)
     end
 
+    def whatever
+        @last_photographer = Photographer.last
+    end 
+
     def destroy 
         @review = Review.find(params[:id])
         @review.destroy

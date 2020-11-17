@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   #get '/auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   get '/canon-photographers', to: 'photographers#canon'
   get '/sony-photographers', to: 'photographers#sony'
+  get '/whatever', to: 'reviews#whatever'
   get '/users', to: 'photographers#index'
   post '/users/:id', to: 'photographers#index'
   
